@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <div id="ex1">
+        <h2>1) Percorra o objeto clientes e mostre o nome da cada cliente da seguinte maneira: "ultimoSobrenome, primeiroNome"</h2>
+
+        <div class="btnBox">
+            <button class="btnAddFormatacao" onclick="mostraNomeDosClientes(true)">Adicionar formatação</button>
+            <button class="btnRemoveFormatacao" onclick="mostraNomeDosClientes(false)">Remover formatação</button>
+        </div>
+
+        <ul id="listaDeClientes">
+            <!-- Inserido pelo JavaScript -->
+        </ul>
+    </div>
+
+    <div id="ex2">
+        <h2>2) Formate a variável "numero" para o seguinte formato: "(XX)_X_XXXX-XXXX"</h2>
+
+        <div class="btnBox">
+            <button class="btnAddFormatacao" onclick="mostraNumeroDeTelefone(true)">Adicionar formatação</button>
+            <button class="btnRemoveFormatacao" onclick="mostraNumeroDeTelefone(false)">Remover formatação</button>
+        </div>
+
+        <ul id="numeroDeTelefone">
+            <!-- Inserido pelo JavaScript -->
+        </ul>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
