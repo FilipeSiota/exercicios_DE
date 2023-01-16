@@ -1,6 +1,6 @@
 # Bônus
 
-3) Qual a ordem dos prints no console?
+**3) Qual a ordem dos prints no console?**
 
     Pensei que seria:
 
@@ -19,6 +19,6 @@
     A função é: d
     ```
     
-4) Existe algum erro nesse código? Se sim, comente sobre?
+**4) Existe algum erro nesse código? Se sim, comente sobre?**
 
     Eu notei apenas um erro na função b, a qual nunca executa o comando ``alertUser('b')`` pois ele foi colocado depois de ``return`` (comando que encerra a execução da função).
