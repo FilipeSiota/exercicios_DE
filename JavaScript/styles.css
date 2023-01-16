@@ -1,0 +1,77 @@
+:root {
+    font-size: 16px;
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --js-logo-background: #e3cc00;
+    --js-logo-text: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    height: 100%;
+    min-width: 340px;
+    width: 100vw;
+}
+
+body {
+    background-color: var(--js-logo-background);
+    color: var(--js-logo-text);
+
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.exercicio {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    margin-bottom: 2rem;
+}
+
+.exercicio h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.exercicio .btnBox button {
+    padding: 0.4rem;
+
+    border: 0.15rem solid var(--js-logo-text);
+    border-radius: 0.5rem;
+
+    background-color: var(--js-logo-text);
+    color: #FFFFFF;
+    font-size: 1rem;
+
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.exercicio .btnBox button:hover {
+    background-color: transparent;
+    color: var(--js-logo-text);
+}
+
+.exercicio #listaDeClientes, .exercicio #numeroDeTelefone {
+    list-style-position: inside;
+    list-style-type: square;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+        font-size: 12px;
+    }
+}
