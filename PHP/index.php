@@ -33,7 +33,7 @@ $arrayDeNascimento = [
 foreach ($arrayDeClientes as $cliente) {
     // para cada cliente do array um atributo dataNascimento é adicionado ao objeto
     // o valor desse novo atributo é baseado na busca pelo nome do cliente (índice) no arrayDeNascimento
-    $cliente->dataNascimento = $arrayDeNascimento[$cliente->nome];
+    $cliente->dataNascimento = $arrayDeNascimento[$cliente->nome]; // ** cuidar pois se o nome do cliente não estiver no arrayDeNascimento ele estará procurando uma posição inexistente
 
     echo ("Nome: " . $cliente->nome . "\nData de nascimento: " . $cliente->dataNascimento . "\n\n");
 }
