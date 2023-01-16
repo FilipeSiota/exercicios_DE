@@ -17,7 +17,7 @@ $cliente3->nome = $nomes[2];
 
 $arrayDeClientes = [$cliente1, $cliente2, $cliente3];
 
-echo ($arrayDeClientes[1]->nome);
+echo ($arrayDeClientes[1]->nome); // pega o nome do cliente de índice 1 (segundo do array)
 
 // 2) Utilize a estrutura de dados $arrayDeNascimento para adicionar na estrutura $arrayDeClientes a data de nascimento de cada cliente.
 
@@ -31,6 +31,8 @@ $arrayDeNascimento = [
 ];
 
 foreach ($arrayDeClientes as $cliente) {
+    // para cada cliente do array um atributo dataNascimento é adicionado ao objeto
+    // o valor desse novo atributo é baseado na busca pelo nome do cliente (índice) no arrayDeNascimento
     $cliente->dataNascimento = $arrayDeNascimento[$cliente->nome];
 
     echo ("Nome: " . $cliente->nome . "\nData de nascimento: " . $cliente->dataNascimento . "\n\n");
@@ -40,14 +42,17 @@ foreach ($arrayDeClientes as $cliente) {
 
 echo (">> Exercício 3:\n\n");
 
-// Maneira 1 - Bubble Sort:
+// Maneira 1 - Bubble Sort - ASC:
 
 echo ("- Bubble Sort:\n\n");
 
+// iteramos o arrayDeClientes até o penúltimo cliente, já que o último já estará na posição correta, evitando processamento a mais
 for ($indice = 0; $indice < sizeof($arrayDeClientes) - 1; $indice++) {
 
+    // para cada indice, comparamos os outros clientes do final do array até a posição do próprio indice
     for ($indiceComparativo = sizeof($arrayDeClientes) - 1; $indiceComparativo > $indice; $indiceComparativo--) {
 
+        // comparamos as datas de nascimento dos objetos colocando sempre a menor na posição do indice
         if (strtotime($arrayDeClientes[$indice]->dataNascimento) > strtotime($arrayDeClientes[$indiceComparativo]->dataNascimento)) {
             $aux = $arrayDeClientes[$indice];
             $arrayDeClientes[$indice] = $arrayDeClientes[$indiceComparativo];
@@ -60,18 +65,19 @@ foreach ($arrayDeClientes as $cliente) {
     echo ($cliente->nome . " nascido em " . $cliente->dataNascimento . "\n\n");
 }
 
-// Maneira 2 - usort():
+// Maneira 2 - usort() - DESC:
 
 echo ("- usort():\n\n");
 
+// permite com que criemos uma função de comparação
 function comparaDataNascimento($ant, $pos) {   
     if (strtotime($ant->dataNascimento) == strtotime($pos->dataNascimento)) {
     return 0;
     }
-    return (strtotime($ant->dataNascimento) < strtotime($pos->dataNascimento)) ? -1 : 1;
+    return (strtotime($ant->dataNascimento) > strtotime($pos->dataNascimento)) ? -1 : 1;
 }
 
-usort($arrayDeClientes, "comparaDataNascimento");
+usort($arrayDeClientes, "comparaDataNascimento"); // ordena o arrayDeClientes conforme a função passada
 
 foreach ($arrayDeClientes as $cliente) {
     echo ($cliente->nome . " nascido em " . $cliente->dataNascimento . "\n\n");
