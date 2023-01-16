@@ -26,9 +26,9 @@ var clientes = [
 ]
 
 const formataNome = (nome) => {
-    const partesDoNome = nome.split(" ");
+    const partesDoNome = nome.split(" "); // coloca as partes do nome (separadas a cada espaço) em um array
     const primeiroNome = partesDoNome[0];
-    const ultimoSobrenome = partesDoNome[partesDoNome.length - 1];
+    const ultimoSobrenome = partesDoNome[partesDoNome.length - 1]; // pega o último sobrenome baseado na última posição do array considerando seu tamanho
 
     return ultimoSobrenome + ", " + primeiroNome;
 }
@@ -47,8 +47,9 @@ mostraNomeDosClientes();
 var numero = "5(1)9-876-543-21";
 
 const formataNumeroDeTelefone = (numeroDeTelefone) => {
-    numeroDeTelefone = numeroDeTelefone.replace(/[^0-9]/g, "");
-    numeroDeTelefone = numeroDeTelefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1)_$2_$3-$4");
+    numeroDeTelefone = numeroDeTelefone.replace(/[^0-9]/g, ""); // utiliza expressão regular (REGEX) para limpar caracteres indesejáveis e espaços da string que contém o número de telefone, deixando apenas os números
+    numeroDeTelefone = numeroDeTelefone.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, "($1)_$2_$3-$4"); // utiliza expressão regular (REGEX) para formatar o número de telefone
+    // coloca os dois primeiros dígitos entre parênteses, o terceiro entre underlines, mais quatro dígitos, um hífen, e os quatro dígitos restantes
 
     return numeroDeTelefone;
 }

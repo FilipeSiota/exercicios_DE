@@ -1,3 +1,7 @@
+/*=====================================================
+# ARQUIVO COM UTILIZAÇÃO DA DOM DO index.html
+=====================================================*/
+
 // 1) Percorra o objeto clientes e mostre o nome da cada cliente da seguinte maneira: “ultimoSobrenome, primeiroNome”
 
 var clientes = [
