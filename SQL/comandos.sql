@@ -114,7 +114,7 @@ SELECT
             ON PAR.ID_RESPONSAVEL = RESP.ID
         WHERE
             PAR.ID_ALUNO = ALU.ID
-        LIMIT 3, 1
+        LIMIT 1, 1
     ) AS RESPONSÁVEL_2,
     (
         SELECT
@@ -123,7 +123,7 @@ SELECT
             DE_PARENTESCO PAR
         WHERE
             PAR.ID_ALUNO = ALU.ID
-        LIMIT 3, 1
+        LIMIT 1, 1
     ) AS PARENTESCO_2
 FROM
     DE_ALUNO ALU
